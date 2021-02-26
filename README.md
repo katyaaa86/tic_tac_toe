@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/katyaaa86/tic_tac_toe.svg?branch=main)](https://travis-ci.org/katyaaa86/tic_tac_toe)
+
 tic tac toe
 ===========
 
