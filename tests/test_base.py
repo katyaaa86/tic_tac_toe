@@ -18,11 +18,11 @@ def test_make_turn(chosen_field, sign, expected):
     assert tic_tac_toe.make_turn(sign) == expected
 
 
-def test_find_empty_field(create_tic_tac):
+def test_find_empty_fields(create_tic_tac):
     computer = ComputerPlayer()
-    assert computer.find_empty_field(create_tic_tac.game_field) == [_ for _ in range(1, 9)]
+    assert computer.find_empty_fields(create_tic_tac.game_field) == [_ for _ in range(1, 9)]
 
 
 def test_is_empty(create_tic_tac):
     user = UserPlayer()
-    assert user.is_empty(create_tic_tac.chosen_field, create_tic_tac.game_field) is False
+    assert user.is_empty_field(create_tic_tac.chosen_field, create_tic_tac.game_field) is False

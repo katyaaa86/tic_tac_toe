@@ -9,15 +9,15 @@ from enums import Sign
 class TicTacToe:
 
     def __init__(self):
-        self.game_field = self.initial_game_field()
+        self.game_field = self.get_initial_game_field()
         self.chosen_field = None
 
     @staticmethod
-    def initial_game_field() -> List[str]:
+    def get_initial_game_field() -> List[str]:
         return [' ' for _ in range(config.MAX_FIELDS_COUNT)]
 
     @staticmethod
-    def initial_game_field_with_numbers() -> List[str]:
+    def get_initial_game_field_with_numbers() -> List[str]:
         return [str(_) for _ in range(config.MAX_FIELDS_COUNT)]
 
     def make_turn(
@@ -29,7 +29,7 @@ class TicTacToe:
         return update_game_field
 
     @staticmethod
-    def game_field_for_print(game_field) -> str:
+    def prep_game_field_for_print(game_field) -> str:
         result_field = ''
         rows_count = int(math.sqrt(config.MAX_FIELDS_COUNT))
         for i in range(rows_count):
@@ -37,7 +37,7 @@ class TicTacToe:
             result_field += '|' + '|'.join(row) + '|\n'
         return result_field
 
-    def info_about_turn(self,  chosen_field: int, sign: Sign) -> str:
+    def get_info_about_turn(self,  chosen_field: int, sign: Sign) -> str:
         return f'{sign.value} makes turn to field {chosen_field}'
 
 
@@ -45,7 +45,7 @@ class ComputerPlayer:
     def __init__(self):
         self.sign = Sign.computer
 
-    def find_empty_field(self, field: List[str]) -> List[int]:
+    def find_empty_fields(self, field: List[str]) -> List[int]:
         empty_fields = [i for i in range(len(field)) if field[i] == ' ']
         return empty_fields
 
@@ -60,5 +60,5 @@ class UserPlayer:
     def ask_user_for_field_number(self) -> str:
         return f'{self.sign.value} turn. Input a number of free field: '
 
-    def is_empty(self, chosen_field: int, game_field: List[str]) -> bool:
+    def is_empty_field(self, chosen_field: int, game_field: List[str]) -> bool:
         return game_field[chosen_field] == ' '
