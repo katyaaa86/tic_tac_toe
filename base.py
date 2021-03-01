@@ -20,7 +20,7 @@ class TicTacToe:
     def get_initial_game_field_with_numbers() -> List[str]:
         return [str(_) for _ in range(config.MAX_FIELDS_COUNT)]
 
-    def make_turn(
+    def make_move(
             self,
             sign: Sign
     ) -> List[str]:

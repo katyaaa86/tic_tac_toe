@@ -56,7 +56,7 @@ def game(game: TicTacToe, user: UserPlayer, computer: ComputerPlayer):
                 if user.is_empty_field(game.chosen_field, game.game_field):
                     break
                 print('This field is taken. Try again.')
-        game.game_field = game.make_turn(sign)
+        game.game_field = game.make_move(sign)
         print(game.get_info_about_turn(game.chosen_field, sign))
         print(game.prep_game_field_for_print(game.game_field))
 

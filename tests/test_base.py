@@ -12,10 +12,10 @@ from enums import Sign
         (7, Sign.computer, [' ', ' ', ' ', ' ', ' ', ' ', ' ', 'X', ' '])
     ]
 )
-def test_make_turn(chosen_field, sign, expected):
+def test_make_move(chosen_field, sign, expected):
     tic_tac_toe = TicTacToe()
     tic_tac_toe.chosen_field = chosen_field
-    assert tic_tac_toe.make_turn(sign) == expected
+    assert tic_tac_toe.make_move(sign) == expected
 
 
 def test_find_empty_fields(create_tic_tac):
